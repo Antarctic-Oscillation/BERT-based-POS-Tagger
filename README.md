@@ -26,11 +26,16 @@ cd bert_parts-of-speech_tagger
 pip install -r requirements.txt
 ```
 
+
 ## Usage
 
 ### Training the Model
 
-The main script handles dataset loading, preprocessing, training, and evaluation:
+You can either run the training script directly, or use the dedicated colab notebook. Both train the distilled and the large version of BERT, respectively.
+
+Colab Notebook: https://colab.research.google.com/drive/1b98F-w1-wfMZTZuJLZQo3zyMWXKgYGvT?usp=sharing
+
+The training script handles dataset loading, preprocessing, training, and evaluation:
 
 You can modify the configuration variables at the top of the script:
 - `SMALL_BERT`: Set to `True` to use DistilBERT (faster) or `False` to use BERT-large (more accurate)
