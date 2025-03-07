@@ -28,3 +28,4 @@ for idx, word_idx in enumerate(word_ids):
 
 for token, tag in zip(tokens, pos_tags):
     print(f"{token}: {tag}")
+    
