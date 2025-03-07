@@ -10,7 +10,7 @@ with open(f"{model_path}/label_mappings.json", "r") as f:
     id2label = mappings["id2label"]
     id2label = {int(k): v for k, v in id2label.items()}
 
-sentence = "I love coding with transformers"
+sentence = "I love coding with BERT!"
 tokens = sentence.split()
 inputs = tokenizer(tokens, is_split_into_words=True, return_tensors="pt")
 outputs = model(**inputs)
