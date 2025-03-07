@@ -52,7 +52,6 @@ model = AutoModelForTokenClassification.from_pretrained(model_path)
 with open(f"{model_path}/label_mappings.json", "r") as f:
     mappings = json.load(f)
     id2label = mappings["id2label"]
-    # Convert string keys back to integers
     id2label = {int(k): v for k, v in id2label.items()}
 
 sentence = "I love coding with transformers"
@@ -85,7 +84,16 @@ for token, tag in zip(tokens, pos_tags):
 
 ## Performance
 
-The model achieves good accuracy on the Universal Dependencies test set. The confusion matrix and performance metrics (accuracy, precision, recall, F1) are calculated in the jupyter notebook.
+The model achieves decent accuracy on the Universal Dependencies test set. The confusion matrix and performance metrics (accuracy, precision, recall, F1) are calculated in the jupyter notebook.
+
+The final results are:
+### Accuracy: 0.968
+### Percision: 0.967
+### Recall: 0.968
+### F1 Score: 0.967
+
+![confusion matrix](images/confusion_matrix.png)
+
 
 ## Acknowledgments
 
