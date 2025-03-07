@@ -45,26 +45,22 @@ from the predict.py script:
 from transformers import AutoTokenizer, AutoModelForTokenClassification
 import json
 
-# Load the model and tokenizer
-model_path = "distilbert-base-cased-pos-tagger-final"  # or bert-large-uncased-pos-tagger-final
+model_path = "distilbert-base-cased-pos-tagger-final"
 tokenizer = AutoTokenizer.from_pretrained(model_path)
 model = AutoModelForTokenClassification.from_pretrained(model_path)
 
-# Load label mappings
 with open(f"{model_path}/label_mappings.json", "r") as f:
     mappings = json.load(f)
     id2label = mappings["id2label"]
     # Convert string keys back to integers
     id2label = {int(k): v for k, v in id2label.items()}
 
-# Tag a sentence
 sentence = "I love coding with transformers"
 tokens = sentence.split()
 inputs = tokenizer(tokens, is_split_into_words=True, return_tensors="pt")
 outputs = model(**inputs)
 predictions = outputs.logits.argmax(dim=2)
 
-# Convert predictions to tags
 word_ids = inputs.word_ids()
 previous_word_idx = None
 pos_tags = []
