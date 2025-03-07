@@ -91,14 +91,13 @@ for token, tag in zip(tokens, pos_tags):
 
 The model achieves decent accuracy on the Universal Dependencies test set. The confusion matrix and performance metrics (accuracy, precision, recall, F1) are calculated in the jupyter notebook.
 
-The final results are:
+The final results (for the small BERT) are:
 ### Accuracy: 0.968
 ### Percision: 0.967
 ### Recall: 0.968
 ### F1 Score: 0.967
 
 ![confusion matrix](images/confusion_matrix.png)
-
 
 ## Acknowledgments
 
