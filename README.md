@@ -19,7 +19,7 @@ This project implements a neural POS tagger using pre-trained language models. I
 
 ```bash
 # Clone the repository
-git clone https://github.com/Antarctic-Oscillation/bert_parts-of-speech_tagger.git
+git clone https://github.com/Antarctic-Oscillation/BERT-based-POS-Tagger.git
 cd bert_parts-of-speech_tagger
 
 # Install requirements
